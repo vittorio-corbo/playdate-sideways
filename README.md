@@ -12,3 +12,9 @@ This project is licensed under the MIT license.
 - 400px wide x 240px high 
 - Crank position is it 0° when pointing north, 90°->East, 180°->South, 270°->West
 - origin is at top-left. x goes to the left (->), y goes down (↓)
+
+
+# Possible Todos:
+- make the game work more like doodle jump-esque (or some other kind of top-down game)
+- use A and B buttons, maybe you shoot with them mayhaps???
+- maybe game is more like a shoot em up (shup)
