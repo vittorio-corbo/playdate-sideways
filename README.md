@@ -18,3 +18,4 @@ This project is licensed under the MIT license.
 - make the game work more like doodle jump-esque (or some other kind of top-down game)
 - use A and B buttons, maybe you shoot with them mayhaps???
 - maybe game is more like a shoot em up (shup)
+- Put game on itch.io
