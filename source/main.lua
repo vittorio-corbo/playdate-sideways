@@ -5,7 +5,8 @@ local pd = playdate
 local gfx = pd.graphics
 
 -- Player
-local playerStartX = 40
+local playerStartX = 360
+-- local playerStartX = 40 --used to be 40 (when went right)
 local playerStartY = 120
 local playerSpeed = 3
 local playerImage = gfx.image.new("images/capybara")
@@ -24,7 +25,8 @@ local obstacleImage = gfx.image.new("images/rock")
 local obstacleSprite = gfx.sprite.new(obstacleImage)
 obstacleSprite.collisionResponse = gfx.sprite.kCollisionTypeOverlap
 obstacleSprite:setCollideRect(0, 0, 48, 48)
-obstacleSprite:moveTo(450, 240)
+-- obstacleSprite:moveTo(450, 240)
+obstacleSprite:moveTo(-50, 240)
 obstacleSprite:add()
 
 function pd.update()
@@ -35,9 +37,11 @@ function pd.update()
         if pd.buttonJustPressed(pd.kButtonA) then
             gameState = "active"
             score = 0
-            obstacleSpeed = 5
+            -- obstacleSpeed = 5
+            obstacleSpeed = -5
             playerSprite:moveTo(playerStartX, playerStartY)
-            obstacleSprite:moveTo(450, math.random(40, 200))
+            -- obstacleSprite:moveTo(450, math.random(40, 200))
+            obstacleSprite:moveTo(-50, math.random(40, 200))
         end
     elseif gameState == "active" then
         -- Player movement
@@ -65,10 +69,13 @@ function pd.update()
 
         -- Rock colisions
         local actualX, actualY, collisions, length = obstacleSprite:moveWithCollisions(obstacleSprite.x - obstacleSpeed, obstacleSprite.y)
-        if obstacleSprite.x < -20 then
-            obstacleSprite:moveTo(450, math.random(40, 200))
+        -- if obstacleSprite.x < -20 then
+        if obstacleSprite.x > 420 then
+            -- obstacleSprite:moveTo(450, math.random(40, 200))
+            obstacleSprite:moveTo(-50, math.random(40, 200))
             score += 1
-            obstacleSpeed += 0.2
+            -- obstacleSpeed += 0.2
+            obstacleSpeed -= 0.2
             print("pizza")
         end
 
