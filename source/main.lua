@@ -52,6 +52,7 @@ function pd.update()
             obstacleSprite:moveTo(450, math.random(40, 200))
             score += 1
             obstacleSpeed += 0.2
+            print("pizza")
         end
 
         if length > 0 or playerSprite.y > 270 or playerSprite.y < -30 then

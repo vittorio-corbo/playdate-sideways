@@ -7,3 +7,6 @@ This is a small example game to dip your toes into Playdate game development aft
 
 # License
 This project is licensed under the MIT license.
+
+# Playdate info
+400px wide x 240px high 
