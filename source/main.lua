@@ -40,13 +40,30 @@ function pd.update()
             obstacleSprite:moveTo(450, math.random(40, 200))
         end
     elseif gameState == "active" then
+        -- Player movement
+            -- Could be sexier but its okay for now
         local crankPosition = pd.getCrankPosition()
-        if crankPosition <= 90 or crankPosition >= 270 then
-            playerSprite:moveBy(0, -playerSpeed)
+        gfx.drawTextAligned(tostring(crankPosition), 200, 40, kTextAlignment.center)
+        print(crankPosition)
+        if 180 < crankPosition and crankPosition < 360 then
+            -- (Left side -> crank towards player)
+            playerSprite:moveTo(playerStartX,240-(4/3)*(crankPosition-180))
         else
-            playerSprite:moveBy(0, playerSpeed)
+            -- (Right side -> crank away from player)
+            playerSprite:moveTo(playerStartX,(4/3)*(crankPosition))
         end
 
+
+        -- OLD MOVEMENT
+        -- if crankPosition <= 90 or crankPosition >= 270 then
+        --     playerSprite:moveBy(0, -playerSpeed)
+        -- else
+        --     playerSprite:moveBy(0, playerSpeed)
+        -- end
+
+
+
+        -- Rock colisions
         local actualX, actualY, collisions, length = obstacleSprite:moveWithCollisions(obstacleSprite.x - obstacleSpeed, obstacleSprite.y)
         if obstacleSprite.x < -20 then
             obstacleSprite:moveTo(450, math.random(40, 200))
@@ -55,6 +72,7 @@ function pd.update()
             print("pizza")
         end
 
+        -- Out of bounds
         if length > 0 or playerSprite.y > 270 or playerSprite.y < -30 then
             gameState = "stopped"
         end
