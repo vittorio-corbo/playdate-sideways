@@ -2,5 +2,5 @@ name=Sideways
 author=Vittorio Corbo
 description=crank it to the side
 bundleID=com.vittocorbo.sideways
-version=1.0.0
-buildNumber=1
+version=1.1.0
+buildNumber=2
