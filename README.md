@@ -13,6 +13,8 @@ Gotten from: https://www.youtube.com/watch?v=UZ04rk3lLqU
 - 400px wide x 240px high 
 - Crank position is it 0° when pointing north, 90°->East, 180°->South, 270°->West
 - origin is at top-left. x goes to the left (->), y goes down (↓)
+- sdk: https://play.date/dev/
+- more info: https://sdk.play.date/3.1.2/Inside%20Playdate.html
 
 
 # Possible Todos:
